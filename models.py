@@ -1,5 +1,6 @@
 from sqlalchemy import create_engine, Column, String, Integer, Boolean, Float, ForeignKey
 from sqlalchemy.orm import declarative_base
+
 # from sqlalchemy_utils import ChoiceType
 
 
@@ -20,7 +21,7 @@ class Usuario(Base):
     ativo = Column("ativo", Boolean)
     admin = Column("admin", Boolean, default=False)
 
-    def __init__(self, nome, email, senha, ativo=True, admin=False):
+    def __init__(self, nome, email, senha, ativo=None, admin=False):
         self.nome = nome
         self.email = email
         self.senha = senha
